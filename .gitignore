@@ -96,3 +96,5 @@ ENV/
 
 # mkdocs documentation
 /site
+
+run_with_secrets.sh
