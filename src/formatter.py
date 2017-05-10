@@ -9,10 +9,10 @@ class Formatter:
 
     def __init__(self, results):
         self.results = results
+        self.values_per_floor_plan = 3
 
     def create_slack_message(self):
         """ Creates a message formatted for Slack """
-        meta = self.__meta()
         floor_plans = self.__format_floor_plans()
 
         return {
@@ -26,16 +26,11 @@ class Formatter:
                     "fields": [
                         {
                             "title": "Floor plans available",
-                            "value": meta["floor_plan_count"]
+                            "value": len(floor_plans) / self.values_per_floor_plan
                         }
                     ],
                 }
             ] + floor_plans
-        }
-
-    def __meta(self):
-        return {
-            "floor_plan_count": len(self.results)
         }
 
     def __format_floor_plans(self):
