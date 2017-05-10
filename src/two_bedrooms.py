@@ -19,6 +19,5 @@ def main():
     slack = Slack(WEBHOOK_URL)
     slack.send(message)
 
-
 if __name__ == "__main__":
     main()
