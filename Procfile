@@ -1,1 +1,1 @@
-worker: python3 src/two_bedrooms.py
+worker: python src/two_bedrooms.py
